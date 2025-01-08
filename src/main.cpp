@@ -12,6 +12,16 @@ byte prev_PINB;
 byte prev_PIND;
 
 void setup() {
+
+  for(int i = 2; i<8;i++)  
+  {
+    pinMode(i,INPUT);
+  }
+  for(int i = 8; i<12;i++)
+  {
+    pinMode(i,INPUT);
+  }
+
   PCICR  |= B00000101; //pinchange inturupt port B & D (pins 0-13)
   PCMSK0 |= B00011111; //D12-D8 port B
   PCMSK2 |= B11111100; // D7-D2 port D
